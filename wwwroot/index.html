@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--This link is just to get an envelope icon for "Remarks"" while sending the emails -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        margin:0;font-family:Arial
+    }
+</style>
+<link href="./navbar.css" rel="stylesheet" type="text/css"/>
+<link href="./style.css" rel="stylesheet" type="text/css"/>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./master.js"></script>
+<script src="./main.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Welcome <label class="lblUserName">--</label></h1>
+  </div>
+  
+  <div class="row">
+    <div class="col-3 col-s-3 menu">
+      <ul>
+        <li>Dashboard</li>
+        <li>New Card</li>
+        <li>Check Balance</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+  
+    <div class="col-6 col-s-9">
+      <h1 style="text-align:center"><u>Credit Card Maintenance</u></h1>
+      <h3>Available Credit Cards</h3>
+      <table>
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>Card #</th>
+                <th>Status</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody class="main-body">
+            
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="col-3 col-s-12">
+      <div class="aside">
+        <h2>Need Help?</h2>
+        <p>Please contact at 111 for instant online help service. <br/> Thank you!</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>Frontend : HTML, CSS, jQuery</p>
+    <p>Backend: C#, .Net</p>
+  </div>
+  
+  <div id="myModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('myModal')">&times;</span>
+      <div class="dvForm">
+          <label for="country">Card Status for 
+            <span class="mdl_lbl_cardName" style="color:green;font-weight:bold;"></span> 
+          </label>
+          <select id="txtStatus" name="status">
+            <option value="general">General</option>
+            <option value="lost">Lost</option>
+            <option value="damaged">Damaged</option>
+            <option value="stolen">Stolen</option>
+          </select>
+
+          <label for="txtComment">Comment</label>
+          <textarea id="txtComment" rows="5" placeholder="Your Comment Here.."></textarea>
+          <input type="hidden" id="mdl_hdn_card_id">
+          <input type="button" value="Submit" class="btnSaveCardStatus">
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+function myFunction() {
+  var topNavigation = document.getElementById("myTopnav");
+    if (topNavigation.className === "topnav") {
+        topNavigation.className += " responsive";
+  } else {
+        topNavigation.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
